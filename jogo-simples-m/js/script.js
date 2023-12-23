@@ -55,9 +55,22 @@ let algarismos = 2;
 
       
 
-      clearInterval(loop);
+      clearInterval(loop);      
     }
   }, 10);
 
-  document.addEventListener("keydown", jump);
+  // document.addEventListener("keydown", jump);
+  document.addEventListener("keydown", function (event) {
+    if (event.key === " ") {
+      handleJump();
+    }
+  });
+
+  document.addEventListener("touchstart", function (event) {
+    handleJump();
+  });
+
+  function handleJump() {
+    jump();
+  }
 });
